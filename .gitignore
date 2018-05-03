@@ -5,3 +5,5 @@
 *.pyg
 *.upa
 *.upb
+a.out
+a.exe
