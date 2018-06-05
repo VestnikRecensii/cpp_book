@@ -132,10 +132,26 @@
 
 \section*{Вещественные типы}
 
-float, doulbe, long double
+Cуществует 3 станадртных вещественных типа --- \cppword{float}, \cppword{double}, \cppword{long double}. По аналогии с целыми они отличаются размерами. Верно, что \cppword{float} $\leq$ \cppword{double} $\leq$ \cppword{long double}. Обычно они имеют следующие ограничения:
 
-%TODO:
-Операции.
+\begin{itemize}
+\item \cppword{float} имеет размер 32 бит и точность порядка 7 знаков после запятой.
+\item \cppword{double} имеет размер 64 бит и точность порядка 15 знаков после запятой.
+\item \cppword{long double} может иметь размер 64, 80 или 128 бит и точность выше, чем у \cppword{double}.
+\end{itemize}
+
+К вещественным типам применимы те же операции, что и к цеылмм кроме поразрядных, нахождения остатка \cppword{\%}, \cppword{\%=}, инкремента \cppword{++} и декремента \cppword{--}. Операции деления \cppword{/} и \cppword{/=} делят без отбрасывания остатка.
+
+Литералы вещестенного типа задаются 2 способами:
+
+\begin{itemize}
+\item Обыкновенным --- \cppword{0.1}, \cppword{1.5}. Если целая или дробнаячасть равна нулю, ее можно не указывать --- \cppword{.3} (0.3), \cppword{1.} (1.0).
+\item С указанием порядка --- \cppword{5e-1} ($5*10^{-1}$), \cppword{5E-1} ($5*10^{-1}$), \cppword{50e-2} ($50*10^{-2}$), \cppword{0.5e0} ($0.5*10^{0}$) и \cppword{.5e0} ($0.5*10^{0}$). Порядок указывается как маленькой \cppword{e}, так и большой \cppword{E}. Ноль так же можно опускать.
+\end{itemize}
+
+Для точного указания принадлежности литерала к типу \cppword{long double} используют суффиксы \cppword{l} и \cppword{L}, а для \cppword{float} --- \cppword{f} и \cppword{F}:
+
+\showfile{src/parts/float_literals.cpp}{Вещественные литералы}
 
 \section*{Перечисления}
 
