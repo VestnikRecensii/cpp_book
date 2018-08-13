@@ -1,6 +1,6 @@
 #include <iostream>
 
-int B(int n); //Это объявление функции B, без него мы бы не смогли скомпилировать программу - в функции A 
+int B(int n); //Это объявление функции B, без него мы бы не смогли скомпилировать программу - в функции A вызывается B, а в функции B - A.
 
 int A(int n) {//А это определение
     if (n == 1) 
@@ -18,6 +18,6 @@ int B(int n) {
 
 int main() {
     int precision = 10;
-    std::cout << B(precision)/(float)A(precision) << std::endl;
+    std::cout << B(precision)/(float)A(precision) << std::endl; //Будет напечатано 1,4142, т.е. отношение этих функций равно квадратному корню из 2.
     return 0;
 }
